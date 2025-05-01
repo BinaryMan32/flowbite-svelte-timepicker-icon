@@ -50,3 +50,16 @@ Error: Property 'icon' is missing in type '{}' but required in type '{ id?: stri
 <Label>Select Time:</Label>
 <Timepicker />
 ```
+
+Switching to the [Timepicker with icon][timepicker-icon] example returns a different error:
+
+```text
+.../flowbite-svelte-timepicker-icon/src/routes/+page.svelte:7:13
+Error: Type 'Component<Props, {}, "">' is not assignable to type 'ComponentType'.
+  Type 'Component<Props, {}, "">' is not assignable to type 'new (options: ComponentConstructorOptions<Record<string, any>>) => SvelteComponent<Record<string, any>, any, any>'.
+    Type 'Component<Props, {}, "">' provides no match for the signature 'new (options: ComponentConstructorOptions<Record<string, any>>): SvelteComponent<Record<string, any>, any, any>'. (js)
+<Label>Select Time (Flowbite Icon):</Label>
+<Timepicker icon={ClockSolid} />
+```
+
+[timepicker-icon]: https://flowbite-svelte.com/docs/forms/timepicker#Timepicker_with_icon
