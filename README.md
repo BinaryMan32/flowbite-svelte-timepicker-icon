@@ -1,38 +1,52 @@
-# sv
+# Flowbite Svelte Timepicker Icon
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Project to demonstrate issues with the [Flowbite Svelte Timepicker][timepicker] `icon` field.
 
-## Creating a project
+[timepicker]: https://flowbite-svelte.com/docs/forms/timepicker
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Project Creation
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpx sv create
 ```
 
-## Building
+(Accepted all defaults)
 
-To create a production version of your app:
+Following instructions at [Quickstart - Flowbite Svelte][quickstart]
 
 ```bash
-npm run build
+npx sv add tailwindcss
 ```
 
-You can preview the production build with `npm run preview`.
+(Enabled `forms` plugin)
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Add `flowbite-svelte`:
+
+```bash
+pnpm i -D flowbite-svelte flowbite flowbite-svelte-icons
+```
+
+Updated `src/app.css` as documented in [Quickstart - Configuration][quickstart-configuration].
+
+Modified `src/routes/+page.svelte` to match [Flowbite Svelte Default timepicker][default-timepicker] example.
+
+[quickstart]: https://flowbite-svelte.com/docs/pages/quickstart
+[quickstart-configuration]: https://flowbite-svelte.com/docs/pages/quickstart#Configuration
+[default-timepicker]: https://flowbite-svelte.com/docs/forms/timepicker#Default_timepicker
+
+## Issues
+
+Running `svelte-check` as shown below should pass:
+
+```bash
+pnpm check
+```
+
+However, it returns the error:
+
+```text
+.../flowbite-svelte-timepicker-icon/src/routes/+page.svelte:6:2
+Error: Property 'icon' is missing in type '{}' but required in type '{ id?: string | undefined; endId?: string | undefined; value?: string | undefined; endValue?: string | undefined; min?: string | undefined; max?: string | undefined; required?: boolean | undefined; ... 15 more ...; columns?: 1 | ... 3 more ... | undefined; }'. (js)
+<Label>Select Time:</Label>
+<Timepicker />
+```
