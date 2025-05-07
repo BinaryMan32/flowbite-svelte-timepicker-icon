@@ -4,7 +4,7 @@
 </script>
 
 <Label>Select Time (Flowbite Icon):</Label>
-<Timepicker icon={ClockSolid} />
+<Timepicker Icon={ClockSolid} />
 
 <Label>Select Time (Default icon):</Label>
 <Timepicker />

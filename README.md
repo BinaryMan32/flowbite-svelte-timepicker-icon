@@ -34,7 +34,14 @@ Modified `src/routes/+page.svelte` to match [Flowbite Svelte Default timepicker]
 [quickstart-configuration]: https://flowbite-svelte.com/docs/pages/quickstart#Configuration
 [default-timepicker]: https://flowbite-svelte.com/docs/forms/timepicker#Default_timepicker
 
+## Verified
+
+Verified the issue is fixed in `flowbite-svelte` `1.0.2`.
+
 ## Issues
+
+This is now fixed, see the `Verified` section above.
+To see the original issue, check the `broken` branch.
 
 Running `svelte-check` as shown below should pass:
 
